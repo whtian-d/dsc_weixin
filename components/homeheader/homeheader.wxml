@@ -1,0 +1,144 @@
+<view>
+    <scroll-view scroll-y='true' bindscroll='fixFn' bindscrolltolower='scrollGoodsFn' scroll-with-animation='true'
+        style="height:{{scrollHeight}}px">
+        <view style="background:#efefef">
+            <view class="{{headerFixFalg==true?'active_fixed':''}}">
+                <van-search style="height:88rpx" value="{{ value }}" shape="round" use-action-slot
+                    background="{{colordata}}" placeholder="请输入搜索关键词">
+                    <view slot="action" bind:tap="onClick" class="messageicon">
+                        <van-icon name="chat" size="20px" info="99" />
+                    </view>
+                </van-search>
+                <!-- 滚动导航栏 -->
+                <view class="navwrap">
+                    <view class="scrollnav">
+                        <scroll-view scroll-x="true" class="scroll">
+                            <view class="nav" style="width:{{navwidth}}rpx;background:{{colordata}}">
+                                <view class="nav_title {{index==active?'nav_active':''}}" wx:for="{{navdata}}"
+                                    wx:key='index' bindtap="changeFn" data-index='{{index}}'><text class="nav-text"
+                                        style="background:{{colordata}}">{{item.title}}</text></view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                    <div class="nav_category_box" style="background:{{colordata}}">
+                        <div class="iconbox">
+                            <van-icon name='bars' size='20px' color='#fff'></van-icon>
+                        </div>
+                        <view class="category_text">分类</view>
+                    </div>
+                </view>
+            </view>
+            <!-- 下面是轮播图 -->
+            <view style="height:100px" wx:if="{{headerFixFalg}}"></view>
+            <view class="header_bottom" style="background:{{colordata}}" wx:if="{{active==0}}"></view>
+            <!-- 轮播图 -->
+            <view class="swiper-wrap" wx:if="{{active==0}}">
+                <swiper indicator-dots indicator-color='#fff' indicator-active-color='#ccc' autoplay circular
+                    bindchange='{{headerFixFalg==false?"changeswiperFn":""}}' current='{{swipercurrent}}'
+                    class="swiper-box">
+                    <swiper-item class="swiper" wx:for="{{swiperdata.list}}" wx:key='index' wx:for-item='data'>
+                        <image src="{{data.img}} "></image>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <!-- 子组件 -->
+            <homeIndex swiperdata='{{swiperdata}}' swiperlistdata='{{swiperlistdata}}' wx:if="{{active==0}}" />
+            <homechildother datalist="{{childDatas}}" childScrollDatas="{{childScrollDatas}}" wx:if="{{active!=0}}" />
+            <scrollgoods wx:if="{{active!=0}}" params="{{childScrollDatas}}" />
+            <!-- 首页其他 -->
+            <view wx:if="{{active==0}}">
+                <!-- index组件秒杀 -->
+                <view class="miaosha_content">
+                    <view class="miaosha_header">
+                        <view class="miaosha_logo">
+                            <image
+                                src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978468241.png">
+                            </image>
+                        </view>
+                        <view class="miaosha_jishi">
+                            <text>距离结束还剩</text>
+                            <view class="time">
+                                <text>{{daojishiTime.hour}}</text>:
+                                <text>{{daojishiTime.minutes}}</text>:
+                                <text>{{daojishiTime.second}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="miaosha_title_time">
+                        <view wx:for="{{miaoshaData.time_list}}" wx:key='index' data-index="{{index}}"
+                            bindtap="changemiaoshaData"
+                            class="start_time {{miaoshaactiveIndex==index?'start_time_active':''}}">
+                            <view class="time">{{item.title}}</view>
+                            <view class="desc">{{item.status==true?'抢购中':'即将开始'}}</view>
+                        </view>
+                    </view>
+                    <view class="miaosha_scrolllist">
+                        <goodscroll params="{{miaoshagoodsInit}}" data="{{miaoshagoodsdata}}" />
+                    </view>
+                    <view class="miaosha_more"><text>更多秒杀商品</text> ></view>
+                </view>
+                <!-- 拼团专区 -->
+                <view class="pintuan_content">
+                    <view class="header">
+                        <view class="logo">拼团专区</view>
+                        <view class="desc">拼着买更实惠</view>
+                        <view class="iconfont icon-home-more"></view>
+                    </view>
+                    <view class="pintuan_scrolllist">
+                        <goodscroll params="{{pintuangoodsInit}}" data="{{pintuangoodsdata}}" />
+                    </view>
+                </view>
+                <!-- 潮流科技 -->
+                <view class="chaoliu">
+                    <chaoliu params="{{chaoliukejiData}}" />
+                </view>
+                <view class="chaoliu">
+                    <chaoliu params="{{meizhuangData}}" />
+                </view>
+                <!-- 品质服饰 -->
+                <view class="pinzhi">
+                    <pinzhi params="{{pinzhiData}}" />
+                </view>
+                <view class="pinzhi">
+                    <pinzhi params="{{xiaodiaoData}}" />
+                </view>
+                <!-- 商铺推荐 -->
+                <view class="pintuan_content">
+                    <view class="header">
+                        <view class="logo">店铺推荐</view>
+                        <view class="desc">更多品质好店</view>
+                        <view class="iconfont icon-home-more"></view>
+                    </view>
+                    <view class="shop_scrolllist">
+                        <shoplist params='{{shopsData}}' />
+
+                    </view>
+                    <view class="shopslist_bottom">
+                        <view class="items">
+                            <image
+                                src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978468372.png">
+                            </image>
+                        </view>
+                        <view class="items">
+                            <image
+                                src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978469174.png">
+                            </image>
+                        </view>
+                    </view>
+                </view>
+                <!-- 首页下面滚动加载 -->
+                <view class="indexScroll_warp">
+                    <view class="tabs">
+                        <view  wx:for="{{indexScrollTitleData}}" class="items {{item.active==true?'active':''}} {{item.borderRight==true?'item_border':''}}" wx:key='index' bindtap="changeIndexScrollist" data-item='{{index}}'>
+                            <view class="title">{{item.title}}</view>
+                            <text class="desc">{{item.desc}}</text>
+                        </view>
+                    </view>
+                    <view class="indexScroll_goods_warp">
+                        <scrollgoods params='{{indexscrolllist}}' />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

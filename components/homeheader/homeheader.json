@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "homeIndex":"../homeIndex/homeIndex",
+        "homechildother":"../homechildother/homechildother",
+        "scrollgoods":"../scroll_goods/scroll_goods",
+        "goodscroll":"../goodscroll/goodscroll",
+        "chaoliu":"../chaoliu/chaoliu",
+        "pinzhi":"../pinzhi/pinzhi",
+        "shoplist":"../shop_list/shoplist"
+    }
+    
+}

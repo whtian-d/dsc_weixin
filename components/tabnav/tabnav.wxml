@@ -1,0 +1,6 @@
+<view class="navtab" style='height:{{oheight}}rpx;'>
+    <view class="navbar">
+        <view class="iconfont icon-jiantou3" wx:if="{{params.showback}}" bindtap="backFn"></view>
+        <view class="text">{{params.title}}</view>
+    </view>
+</view>

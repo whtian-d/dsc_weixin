@@ -1,0 +1,35 @@
+/* components/tabnav/tabnav.wxss */
+@import "../../fonts/myfont/iconfont.wxss";
+
+.navtab {
+    width: 100%;
+    background: #efefef;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.navbar {
+    height: 84rpx;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .iconfont {
+    font-size: 34rpx;
+}
+
+.navbar>.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

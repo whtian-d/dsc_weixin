@@ -1,0 +1,67 @@
+.shop_scrolllist{
+    width: 100%;
+    height: 100%;
+}
+.shop_scrolllist .scroll{
+    width: 100%;
+    height: 100%;
+}
+.shop_scrolllist .scroll .ul{
+    height: 100%;
+    display: flex;
+}
+.shop_scrolllist .scroll .ul .li{
+    height: 100%;
+    background-color: #f6f6f6;
+    border-radius: 20rpx;
+    /* margin-bottom: 20rpx; */
+    margin-right: 20rpx;
+}
+.shop_scrolllist .scroll .ul .li .imgbox_content{
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+.shop_scrolllist .scroll .ul .li .imgbox_content .imgbox_warp{
+    width: 100%;
+    height: 100%;
+}
+.shop_scrolllist .scroll .ul .li .imgbox_content .imgbox_warp image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx 20rpx 0 0 ;
+}
+.shop_scrolllist .scroll .ul .li .imgbox_content .shop_logo{
+    position: absolute;
+    width: 70rpx;
+    height: 70rpx;
+    bottom:-35rpx;
+    left:50%;
+    transform: translateX(-50%);
+}
+.shop_scrolllist .scroll .ul .li .imgbox_content .shop_logo image{
+    width: 100%;
+    height: 100%;
+    border-radius: 35rpx;
+}
+.shop_scrolllist .scroll .ul .li .desc{
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 60rpx 10rpx 40rpx 10rpx ;
+}
+.shop_scrolllist .scroll .ul .li .desc .name{
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    color:#333;
+}
+.shop_scrolllist .scroll .ul .li .desc .shopNum{
+    color: #888;
+    font-size: 24rpx;
+    text-align: center;
+}

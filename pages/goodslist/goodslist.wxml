@@ -1,0 +1,29 @@
+<scroll-view class="goodslist_warp" scroll-y="true" style="width:{{oWidth*2}}rpx;height:{{oHeight*2}}rpx"
+    bindscrolltolower='bottomScrollFn'>
+    <view class="search_warp">
+        <view class="search_content">
+            输入关键字搜索
+            <view class="iconfont icon-search"></view>
+        </view>
+        <view class="iconfont icon-pailie" style="margin-right:20rpx" bindtap="changegoodslist"></view>
+    </view>
+    <view class="goods_tabs">
+        <view class="items_tab {{activeTabIndex==index?'active':''}}" bindtap="changesortFn" wx:for="{{tabsData}}"
+            wx:key='index' data-id='{{index}}'>
+            <view class="text">{{item.title}}</view>
+            <view class="iconfont icon-jiantou-copy-copy" wx:if="{{item.showicon==true&&item.iconfalg==true}}"></view>
+            <view class="iconfont icon-jiantou" wx:if="{{item.showicon==true&&item.iconfalg==false}}"></view>
+        </view>
+        <view class="items_tab">
+            <view class="iconfont icon-filter"></view>
+            <view class="text">筛选</view>
+        </view>
+    </view>
+    <view class="goodslist_content">
+        <scrollgoods params="{{goodslistData}}" />
+    </view>
+    <view class="bottominfo">
+        <view wx:if="{{falg}}">滚动加载</view>
+        <view wx:if="{{noinfo}}">没有更多了</view>
+    </view>
+</scroll-view>

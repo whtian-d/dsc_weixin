@@ -1,0 +1,66 @@
+/* 轮播数据 */
+.swiper-list,.kaixueji {
+    width: 95%;
+    margin:20rpx auto 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.swiper-list .swiper-list-wrap{
+    width: 100%;
+    height: 410rpx;
+}
+.swiper-list .swiper-list-wrap .siper-list-item,.swiperlist{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.swiperlist>view{
+    width: 20%;
+    height: 195rpx;
+}
+.swiperlist>view>image{
+    width: 100%;
+    height: 144rpx;
+}
+.swiperlist>view>.text{
+    margin-top: 4rpx;
+    font-size: 14px;
+    text-align: center;
+}
+/* 下面那条线 */
+.line{
+    width: 95%;
+    border-bottom:1px solid #ccc;
+    margin:0 auto;
+}
+/* 下面新闻 */
+.new_box{
+    width: 100%;
+    height: 100rpx;
+    box-sizing: border-box;
+    padding:7px 10px;
+    display: flex;
+}
+.new_box .logoimg_box{
+    width: 140rpx;
+    margin-right: 20rpx;
+}
+.new_box .logoimg_box image{
+    width: 100%;
+    height: 100%;
+}
+.new_box .news_ul{
+    width: 480rpx;
+    height: 100%;
+}
+.new_box .news_ul .news_li>view{
+    width: 100%;
+    height: 100%;
+    line-height: 72rpx;
+    text-indent: 20rpx;
+    overflow: hidden;
+    word-wrap: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

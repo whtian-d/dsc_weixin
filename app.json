@@ -1,0 +1,75 @@
+{
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-search": "vant-weapp/search",
+    "van-icon": "vant-weapp/icon",
+    "van-goods-action": "vant-weapp/goods-action",
+    "van-goods-action-icon": "vant-weapp/goods-action-icon",
+    "van-goods-action-button": "vant-weapp/goods-action-button",
+    "van-checkbox": "vant-weapp/checkbox/index",
+    "van-checkbox-group": "vant-weapp/checkbox-group/index",
+    "van-dialog": "vant-weapp/dialog/index",
+    "van-action-sheet":"vant-weapp/action-sheet",
+    "van-popup": "vant-weapp/popup/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-card": "vant-weapp/card/index"
+  },
+  "pages": [
+    "pages/home/home",
+    "pages/find/find",
+    "pages/my/my",
+    "pages/cart/cart",
+    "pages/category/category",
+    "pages/goodsdetail/goodsdetail",
+    "pages/goodslist/goodslist",
+    "pages/search/search",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#f92e14",
+    "backgroundColor": "#efefef",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/category.png",
+        "selectedIconPath": "images/category_active.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

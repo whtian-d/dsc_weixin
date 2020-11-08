@@ -1,0 +1,98 @@
+<tabnav params="{{tabnav}}" />
+<view class="cart_warp" style="top:{{oheight}}rpx">
+    <scroll-view class="scroll_list" scroll-y="true" bindscrolltolower="bottomLoadFn">
+        <view class="list">
+            <view class="list_cart_warp" wx:if="{{!allDataLen}}">
+                <view wx:for="{{cartData}}" wx:key="index" wx:for-index='key' wx:if="{{item.goodsData.length!=0}}">
+                    <view class="shops_cart_warp">
+                        <view class="isSelect_box">
+                            <van-checkbox value="{{item.shopSelect}}" checked-color="#f92028"
+                                bind:change="changeshopIsSelect" data-shopname="{{key}}">
+                            </van-checkbox>
+                        </view>
+                        <view class="shop_name">
+                            <view>{{key}}</view>
+                            <view class="icon">
+                                <van-icon name="arrow" />
+                            </view>
+                        </view>
+                    </view>
+                    <view class="goods_warp">
+                        <view class="goods_items" wx:for="{{item.goodsData}}" wx:key='index'>
+                            <view class="isSelect_box">
+                                <van-checkbox value="{{item.isSelect}}" checked-color="#f92028"
+                                    bind:change="changeGoodsIsSelect" data-goodsindex="{{index}}"
+                                    data-shopname="{{key}}">
+                                </van-checkbox>
+                            </view>
+                            <view class="goods_content">
+                                <view class="goods_img_box" bindtap="todetail" data-goods_id="{{item.goods_id}}">
+                                    <image src="{{item.img}}"></image>
+                                </view>
+                                <view class="goods_desc">
+                                    <view class="goods_name">{{item.goods_name}}</view>
+                                    <view class="goods_price_content">
+                                        <view class="price">￥{{item.price}}</view>
+                                        <view class="price_right">
+                                            <view class="input_group">
+                                                <view class="caozuo" bindtap="reducegoodsNum" data-shopname='{{key}}'
+                                                    data-goodindex="{{index}}">-</view>
+                                                <input type="number" bindinput="changeinputFn" data-shopname='{{key}}'
+                                                    data-goodindex="{{index}}" value="{{item.num}}" />
+                                                <view class="caozuo" bindtap="addgoodsNum" data-shopname='{{key}}'
+                                                    data-goodindex="{{index}}">+</view>
+                                            </view>
+                                            <view class="other">
+                                                <van-icon name="like-o" />
+                                                <view class="iconfont icon-delete" style="margin-left:10rpx"
+                                                    data-shopname='{{key}}' data-goodindex="{{index}}"
+                                                    bindtap="deleGoodFn"></view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:else class="nullCart_warp">
+                <view class="nullCart_content">
+                    <view class="null_cart_logo">
+                        <image src="https://x.dscmall.cn/static/dist/img/cart-empty.png"></image>
+                    </view>
+                    <view class="null_cart_text">您的购物车还是空空的，快去逛逛吧！</view>
+                    <view class="null_cart_btn_group">
+                        <view>
+                            <button bindtap="goindex">去逛逛</button>
+                            <button>看看关注</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="like_content">
+                <view class="title">猜你喜欢</view>
+                <view><scrollgoods params="{{goodslistData}}" /></view>
+            </view>
+            <!--  -->
+            <view class="bottom_cart" wx:if="{{!allDataLen}}">
+                <view class="left">
+                    <van-checkbox value="{{ totalSelect }}" checked-color="#f92028" bind:change="allSelectFn"> 全选
+                    </van-checkbox>
+                </view>
+                <view class="right">
+                    <view class="total">
+                        <view class="total_content">
+                            <view class="total_name">合计:</view>
+                            <view class="total_price">￥{{total}}</view>
+                        </view>
+                        <view class="total_desc">(不含运费，已节省 ￥0.00)</view>
+                    </view>
+                    <view class="goBuy">去结算({{sum}})</view>
+                </view>
+            </view>
+            <view style="height:250rpx"></view>
+            <van-dialog id="van-dialog" />
+        </view>
+    </scroll-view>
+</view>

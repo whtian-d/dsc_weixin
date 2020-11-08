@@ -1,0 +1,28 @@
+<view class="fixtop">
+    <view class="title {{activeIndex==index?'active':''}}" wx:for="{{titleData}}" wx:key='index' data-index='{{index}}' bindtap="changeSwiperFn">
+        <text>{{item}}</text>
+    </view>
+</view>
+<view class="find_warp">
+    <swiper class="swiper" current="{{activeIndex}}">
+        <swiper-item>
+            <scroll-view class="scroll_view" scroll-y="true" bindscrolltolower="bottomScrollFn">
+                <view>
+                    <scrollgoods params="{{goodslistData}}" />
+                    <view class="nomore" wx:if="{{!falg}}">没有更多了</view>
+                    <view style="height:80rpx"></view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <swiper-item>3</swiper-item>
+        <swiper-item>
+            <scroll-view class="scroll_view" scroll-y="true" bindscrolltolower="bottomScrollFn">
+                <view>
+                    <scrollgoods params="{{findVideoData}}" imgtoVideo='{{changeVideo}}' />
+                    <view class="nomore" wx:if="{{!falg}}">没有更多了</view>
+                    <view style="height:80rpx"></view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

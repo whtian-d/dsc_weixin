@@ -1,0 +1,21 @@
+<scroll-view scroll-x="true" class="scroll_goods_list">
+    <view class="scrolllist_ul" style="width:{{params.owidth*data.length}}rpx">
+        <view class="li" style="width: {{params.owidth}}rpx;" wx:for="{{data}}" wx:key="index">
+            <view class="imgbox" style="height:{{params.owidth}}rpx">
+                <image src="{{item.goods_thumb}}"></image>
+            </view>
+            <view class="left_top_logo" wx:if="{{params.showLogo}}">
+                <image src="{{params.logo}}"></image>
+            </view>
+            <view class="text">
+                <view class="name">{{item.goods_name}}</view>
+                <view class="shop_price">
+                    <view class="pricelogo" wx:if="{{params.showpricelogo}}">
+                        <image src="/images/price_logo.png"></image>
+                    </view>￥{{item.sec_price||item.team_price}}
+                </view>
+                <view class="old_price">￥{{item.market_price||item.shop_price}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

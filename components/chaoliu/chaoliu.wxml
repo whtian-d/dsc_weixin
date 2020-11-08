@@ -1,0 +1,26 @@
+<view class="chaoliu_componet">
+    <view class="bg_img">
+        <image
+            src="{{params.titleImg}}">
+        </image>
+    </view>
+    <view class="scroll_list">
+        <scroll-view class="ul" scroll-x="true">
+            <view class="li" style="width:{{(params.owidth+20)*params.data.length}}rpx">
+                <view style='width:{{params.owidth}}rpx' class="items" wx:for="{{params.data}}" wx:key='index'>
+                    <view class="imgbox" style="height:{{params.owidth}}rpx">
+                        <image
+                            src="{{item.goods_thumb}}">
+                        </image>
+                    </view>
+                    <view class="text">
+                        <view class="name">
+                            {{item.title}}
+                        </view>
+                        <view class="price">￥{{item.shop_price}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

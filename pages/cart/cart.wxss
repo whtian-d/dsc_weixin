@@ -1,0 +1,256 @@
+/* pages/cart/cart.wxss */
+@import "../../fonts/dsc_small_font.wxss";
+.cart_warp{
+    position: fixed;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #efefef;
+}
+.cart_warp .scroll_list{
+    width: 100%;
+    height: 100%;
+}
+.cart_warp .scroll_list .list{
+    width: 100%;
+    height: auto;
+}
+.cart_warp .scroll_list .list .list_cart_warp{
+    width: 100%;
+    margin-bottom: 60rpx;
+}
+.cart_warp .shops_cart_warp{
+    width: 100%;
+    height: 92rpx;
+    padding: 26rpx 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.cart_warp .shops_cart_warp .isSelect_box{
+    width: 50rpx;
+    height: 100%;
+    margin-right: 20rpx;
+}
+.cart_warp .shops_cart_warp .shop_name{
+    height: 100%;
+    font-size: 36rpx;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.cart_warp .shops_cart_warp .shop_name .icon{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 6rpx;
+    left: 5rpx;
+}
+.cart_warp .goods_warp{
+    padding: 0 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cart_warp .goods_warp .goods_items{
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+}
+.cart_warp .goods_warp .goods_content{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10rpx;
+    height: 100%;
+    margin-left: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.cart_warp .goods_warp .goods_content .goods_img_box{
+    width: 140rpx;
+    height: 140rpx;
+}
+.cart_warp .goods_warp .goods_content .goods_img_box image{
+    width: 100%;
+    height: 100%;
+}
+.cart_warp .goods_warp .goods_content .goods_desc{
+    flex: 1;
+    height: 100%;
+    margin-left: 30rpx;
+}
+.goods_desc .goods_name{
+    width: 100%;
+    height: 76rpx;
+    line-height: 38rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #232326;
+    font-size: 24rpx;
+}
+.goods_desc .goods_price_content{
+    width: 100%;
+    height: 40rpx;
+    margin-top: 30rpx;
+    display: flex;
+    
+}
+.goods_desc .goods_price_content .price{
+    width: 50%;
+    height: 100%;
+    font-size: 30rpx;
+    color: rgb(242, 14, 40);
+}
+.goods_desc .goods_price_content  .price_right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+.goods_desc .goods_price_content  .price_right .input_group{
+    width: 130rpx;
+    height: 100%;
+    display: flex;
+}
+.input_group .caozuo{
+    width: 40rpx;
+    height: 40rpx;
+    box-sizing: border-box;
+    border:1px solid #efefef;
+    text-align: center;
+    line-height: 40rpx;
+    color: #999;
+}
+.input_group input{
+    flex: 1;
+    height: 40rpx;
+    border:none;
+    outline: none;
+    text-align: center;
+    line-height: 40rpx;
+    box-sizing: border-box;
+    font-size: 24rpx;
+}
+.goods_desc  .other{
+    width: 70rpx;
+    height: 100%;
+    margin-left: 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+/* 
+ */
+ .cart_warp .bottom_cart{
+     width: 100%;
+     height: 100rpx;
+     position: fixed;
+     bottom:0;
+     left:0;
+     background-color: #fff;
+     padding: 0 0 0 20rpx;
+     box-sizing: border-box;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+ .cart_warp .bottom_cart .right{
+     display: flex;
+     height: 100%;
+     align-items: center;
+     flex: 1;
+ }
+ .cart_warp .bottom_cart .right .total{
+     flex: 1;
+     height: 100%;
+     padding-right: 30rpx;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ .cart_warp .bottom_cart .right .total .total_content{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+ }
+ .cart_warp .bottom_cart .right .total .total_desc{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24rpx;
+    color: #999;
+ }
+ .cart_warp .bottom_cart .right .goBuy{
+     width: 220rpx;
+     height: 100%;
+     background-color: #f55;
+     color: #fff;
+     text-align: center;
+     line-height: 100rpx;
+     font-size: 28rpx;
+ }
+ /* 空购物车 */
+ .nullCart_warp{
+     width: 100%;
+     min-height: 510rpx;
+     padding: 20rpx;
+     box-sizing: border-box;
+     background-color: #efefef;
+ }
+ .nullCart_content{
+     background-color: #fff;
+     overflow: hidden;
+     width: 100%;
+     border-radius: 20rpx;
+     padding-bottom: 80rpx;
+     height: 100%;
+ }
+ .null_cart_logo{
+     width: 200rpx;
+     height: 200rpx;
+     margin:80rpx auto 0;
+ }
+ .null_cart_logo image{
+     width: 100%;
+     height: 100%;
+ }
+ .null_cart_text{
+     height: 60rpx;
+     margin-top: 30rpx;
+     line-height: 60rpx;
+     font-size: 28rpx;
+     text-align: center;
+     color:#333;
+ }
+ .null_cart_btn_group{
+     width: 100%;
+     height: 60rpx;
+     margin-top: 60rpx;
+     display: flex;
+     justify-content: center;
+ }
+ .null_cart_btn_group button{
+     line-height: 30px;
+     padding: 0 30rpx;
+     margin-right: 20rpx;
+     display: inline-block;
+     font-size: 28rpx;
+ }
+ /* 猜你喜欢 */
+ .like_content{
+     width: 100%;
+ }
+ .like_content .title{
+     width: 100%;
+     height: 80rpx;
+     text-align: center;
+     font-size: 32rpx;
+     line-height: 80rpx;
+     background: #f3f3f3;
+     color: #888;
+ }

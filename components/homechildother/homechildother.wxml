@@ -1,0 +1,21 @@
+<view>
+    <view class="goods_category_box">
+        <view class="goods_category" wx:for="{{datalist.category}}" wx:key='index'>
+            <view class="imgbox">
+                <image src="{{item.touch_icon}}"></image>
+            </view>
+            <view class="text">{{item.cat_name}}</view>
+        </view>
+    </view>
+    <view class="Brand_selection">
+        <view class="Brand_selection_title">品牌精选</view>
+        <view class="brand_warp">
+            <view class="brand_item" wx:for="{{datalist.brand}}" wx:key='index'>
+                <view class="img_box">
+                    <image src="{{item.brand_logo}}"></image>
+                </view>
+                <text>{{item.brand_name}}</text>
+            </view>
+        </view>
+    </view>
+</view>

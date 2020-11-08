@@ -1,0 +1,86 @@
+.scroll_goods_list {
+    width: 100%;
+    height: 100%;
+}
+
+.scrolllist_ul {
+    height: 100%;
+    padding-left: 15rpx;
+    display: flex;
+}
+
+.scrolllist_ul .li {
+
+    height: 100%;
+    margin-right: 10rpx;
+    position: relative;
+}
+
+.scrolllist_ul .li .imgbox {
+    width: 100%;
+}
+
+.scrolllist_ul .li .left_top_logo {
+    width: 100rpx;
+    height: 36rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0;
+    z-index: 5;
+}
+
+.scrolllist_ul .li .left_top_logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.scrolllist_ul .li .imgbox image {
+    width: 100%;
+    height: 100%;
+}
+
+.scrolllist_ul .li .text {
+    width: 100%;
+    padding: 20rpx 10rpx;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+
+.scrolllist_ul .li .text .name {
+    font-size: 26rpx;
+    color: #000;
+    height: 32rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.scrolllist_ul .li .text .shop_price {
+    line-height: 34rpx;
+    margin-top: 12rpx;
+    color: #f00;
+    position: relative;
+    display: flex;
+}
+.scrolllist_ul .li .text .shop_price .pricelogo{
+    /* position: absolute;  */
+    top:0px;
+    left:0px;
+    width: 36rpx;
+    height: 36rpx;
+}
+.scrolllist_ul .li .text .shop_price .pricelogo image{
+    width: 100%;
+    height: 100%;
+}
+.scrolllist_ul .li .text .old_price {
+    color: rgb(136, 136, 136);
+    font-size: 21rpx;
+    margin-top: 4rpx;
+    line-height: 26rpx;
+    text-decoration: line-through;
+}

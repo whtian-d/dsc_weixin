@@ -1,0 +1,62 @@
+.chaoliu_componet{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.chaoliu_componet .bg_img{
+    width: 100%;
+    height: 394rpx;
+    border-radius: 20rpx;
+}
+.chaoliu_componet .bg_img image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+}
+.chaoliu_componet .scroll_list{
+    width: 100%;
+    height: 360rpx;
+    margin-top: -20%;
+}
+.chaoliu_componet .scroll_list .ul{
+    width: 100%;
+    height: 100%;
+}
+.chaoliu_componet .scroll_list .ul .li{
+    height: 100%;
+    display: flex;
+    padding-left: 20rpx;
+}
+.chaoliu_componet .scroll_list .ul .li .items{
+    background-color: #fff;
+    height: 356rpx;
+    border-radius: 20rpx;
+    margin-right: 20rpx;
+}
+.chaoliu_componet .scroll_list .ul .li .items .imgbox{
+    width: 100%;
+}
+.chaoliu_componet .scroll_list .ul .li .items .imgbox image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx 20rpx 0 0;
+}
+.chaoliu_componet .scroll_list .ul .li .items .text{
+    padding: 20rpx 16rpx;
+}
+.chaoliu_componet .scroll_list .ul .li .items .text .name{
+    font-size: 26rpx;
+    color: #000;
+    min-height: 68rpx;
+    line-height: 34rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.chaoliu_componet .scroll_list .ul .li .items .text .price{
+    color: rgb(242, 14, 40);
+    font-size: 30rpx;
+    line-height: 34rpx;
+    margin-top: 10rpx;
+}

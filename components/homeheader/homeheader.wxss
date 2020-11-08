@@ -1,0 +1,329 @@
+/* 首页上面搜索框和下边导航栏 */
+/* 随着滚动条变为固定定位 */
+@import "/fonts/dsc_small_font.wxss";
+.active_fixed{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    z-index:999;
+    transition: all 1s;
+}
+/* 轮播图css */
+.swiper-wrap {
+    width: 95%;
+    height: 240rpx;
+    border-radius: 10px;
+    margin: -50rpx auto 0;
+}
+.swiper-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.swiper-box .swiper image {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+}
+
+/*  */
+.navwrap{
+    height: 80rpx;
+    display: flex;
+}
+.messageicon{
+    margin-top: 13rpx;
+}
+.navwrap .scrollnav{
+    width: 83%;
+}
+.navwrap .scrollnav .scroll{
+    width: 100%;
+    height: 100%;
+}
+.navwrap .scrollnav .scroll .nav{
+    height: 100%;
+    color: #fff;
+}
+.navwrap .scrollnav .scroll .nav .nav_title{
+    padding: 0 10px;
+    display: inline-block;
+    height: 100%;
+    line-height: 80rpx;
+    position: relative;
+}
+.navwrap .scrollnav .scroll .nav .nav_title .nav-text{
+    position: relative;
+    z-index: 5;
+}
+.navwrap .scrollnav .scroll .nav .nav_active{
+    font-weight: bold;
+}
+.navwrap .scrollnav .scroll .nav .nav_active::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-10rpx);
+    
+}
+/* nav右边分类 */
+.navwrap  .nav_category_box{
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    box-shadow: -6px 0 4px -4px rgba(0,0,0,.4);
+}
+.nav_category_box .iconbox{
+    margin-top: 15rpx;
+}
+.category_text{
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #fff;
+    align-items: center;
+}
+/* 下面的一点圆角 */
+.header_bottom{
+    width: 100%;
+    height: 70rpx;
+    border-radius: 0 0 35rpx 35rpx ;
+}
+/* 秒杀的样式 */
+.miaosha_content{
+    width: 95%;
+    margin:20rpx auto;
+    border-radius: 20rpx;
+    background-color: #fff;
+    overflow: hidden;
+}
+.miaosha_content .miaosha_header{
+    width: 100%;
+    height: 110rpx;
+    padding: 44rpx 20rpx 24rpx 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.miaosha_logo{
+    width: 200rpx;
+}
+.miaosha_logo image{
+    width: 100%;
+    height: 100%;
+}
+.miaosha_jishi{
+    font-size: 26rpx;
+    color:#333;
+    display: flex;
+    align-items: center;
+}
+.miaosha_jishi text{
+    margin-right: 16rpx;
+}
+.miaosha_jishi .time{
+    /* width: 192rpx; */
+    line-height: 42rpx;
+    height: 42rpx;
+}
+.miaosha_jishi .time text{
+    width: 48rpx;
+    text-align: center;
+    height: 100%;
+    background-color: #f00;
+    display: inline-block;
+    border-radius: 10rpx;
+    vertical-align: middle;
+    color:#fff;
+}
+/* 秒杀头部样式结束 */
+.miaosha_content .miaosha_title_time{
+    width: 95%;
+    height: 110rpx;
+    margin:10rpx auto 20rpx;
+    background-color: #fff;
+    border-bottom: 2rpx solid #efefef;
+    display: flex;
+}
+.miaosha_content .miaosha_title_time .start_time{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.miaosha_content .miaosha_title_time .start_time_active{
+    border-bottom: 4rpx solid #f00;
+    color: #f00;
+    
+}
+.miaosha_content .miaosha_title_time .start_time_active .time{
+    color: #f00;
+    font-size: 36rpx;
+}
+.miaosha_content .miaosha_title_time .start_time_active .desc{
+    font-size: 28rpx;
+    margin-top: -5rpx;
+}
+.miaosha_content .miaosha_title_time .time{
+    font-size: 28rpx;
+    color: #999;
+    font-weight: 700;
+}
+.miaosha_content .miaosha_title_time .desc{
+    font-size: 24rpx;
+    font-weight: 400;
+    margin-top: 6rpx;
+}
+/* 秒杀下面物品滚动 */
+.miaosha_scrolllist{
+    width: 100%;
+    height: 376rpx;
+}
+.miaosha_more{
+    width: 100%;
+    height: 80rpx;
+    text-align: center;
+}
+.miaosha_more text{
+    font-weight: bold;
+}
+/* 拼团专区 */
+.pintuan_content {
+    width: 95%;
+    margin:20rpx auto;
+    border-radius: 20rpx;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.pintuan_content .header{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    height: 100rpx;
+    padding: 30rpx 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.pintuan_content .header .logo{
+    font-size: 36rpx;
+    color: #000;
+    font-weight: 600;
+    margin: 0 20rpx 0rpx 10rpx;
+    align-self: flex-end;
+}
+.pintuan_content .header .desc{
+    color: #888;
+    font-size: 28rpx;
+    margin-right: 10rpx;
+}
+.pintuan_content .header .iconfont{
+    color:  #f20d23;
+    align-self: flex-end;
+}
+.pintuan_scrolllist{
+    margin-top: 10rpx;
+    height: 376rpx;
+    width: 100%;
+}
+/* 潮流科技 */
+.chaoliu{
+    margin: 20rpx auto 0;
+    width: 95%;
+    height: 628rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+/* 品质服饰 */
+.pinzhi{
+    margin: 20rpx auto 0;
+    width: 95%;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+/* 店铺推荐 */
+.shop_scrolllist{
+    width: 100%;
+    height: 340rpx;
+    margin-top: 20rpx;
+}
+.shopslist_bottom{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.shopslist_bottom .items{
+    border-radius: 1rem;
+    width: calc(50% - 10rpx);
+    height: 184rpx;
+}
+.shopslist_bottom .items image{
+    width: 100%;
+    height: 100%;
+}
+/* 首页下面滚动加载 */
+.indexScroll_warp{
+    width: 95%;
+    margin:20rpx auto 0;
+    height: 2000rpx;
+    /* background-color: #0ff; */
+}
+.indexScroll_warp .tabs{
+    width: 100%;
+    padding: 20rpx 0;
+    height: 121rpx;
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.indexScroll_warp .tabs .items{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.indexScroll_warp .tabs .items .title{
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+}
+.indexScroll_warp .tabs .item_border::after{
+    content: "";
+    position: absolute;
+    height: 80%;
+    width: 1px;
+    right: 0;
+    top: 10%;
+    background-color: #ccc;
+}
+.indexScroll_warp .tabs .items .desc{
+    display: inline-block;
+    border-radius: 20rpx;
+    font-size: 24rpx;
+    padding: 0 15rpx;
+}
+.indexScroll_warp .tabs .active .desc{
+    background: linear-gradient(-88deg,#ff4f2e,#f91f28);
+    color: #fff;
+}
+/* 首页下面商品列表 */
+.indexScroll_goods_warp{
+    width: 100%;
+    height: 300rpx;
+}

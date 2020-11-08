@@ -1,0 +1,44 @@
+<view class="category_warp">
+    <view class="header_warp">
+        <view class="back iconfont icon-back"></view>
+        <view class="search_content">
+            <view class="iconfont icon-search"></view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="left">
+            <view class="title {{activeIndex==index?'active':''}}" wx:for="{{leftData}}" wx:key="index"
+                bindtap="changeList" data-index="{{index}}" data-scrollId='id{{index}}'>
+                <view class="text">{{item.cat_name}}</view>
+            </view>
+        </view>
+        <view class="right">
+            <scroll-view class="scroll_list" scroll-y='true' bindscrolltolower='bottomFn' scroll-top='{{myscrolltop}}'
+                scroll-into-view="{{scrollId}}" scroll-with-animation="true" bindscroll='changeScroll'>
+                <view style="width:100%;height:auto;padding-bottom:60rpx">
+                    <view  class="items" wx:for="{{rightData}}" wx:key='index' id='id{{index}}'>
+                        <view class="title_img">
+                            <image src="{{leftData[index].touch_catads}}"></image>
+                        </view>
+                        <view>
+                            <view class="list_warp" wx:for="{{item}}" wx:key='index' wx:for-item='lists'>
+                                <view class="list_item">
+                                    <view class="header">{{lists.cat_name}}</view>
+                                </view>
+                                <view class="goods_category">
+                                    <view class="goods" wx:for="{{lists.child}}" data-id="{{item.cat_id}}"
+                                        bindtap="navgaterFn" wx:key='index'>
+                                        <view class="imgbox">
+                                            <image src="{{item.touch_icon}}"></image>
+                                        </view>
+                                        <view class="text">{{item.cat_name}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

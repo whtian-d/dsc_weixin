@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabnav":"../../components/tabnav/tabnav",
+    "scrollgoods":"../../components/scroll_goods/scroll_goods"
+  },
+  "navigationStyle":"custom"
+}

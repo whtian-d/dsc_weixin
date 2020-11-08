@@ -1,0 +1,31 @@
+<view>
+    <view class="swiper-list">
+        <swiper class="swiper-list-wrap">
+            <swiper-item class="siper-list-item" wx:for="{{swiperlistdata}}" wx:key='index' wx:for-item='swiperlists'>
+                <view class="swiperlist">
+                    <view wx:for="{{swiperlists}}" wx:key='index'>
+                        <image
+                            src="{{item.img}}">
+                        </image>
+                        <view class="text">{{item.desc}}</view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="line"></view>
+        <view class="new_box">
+            <view class="logoimg_box">
+                <image src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978466633.png"></image>
+            </view>
+            <swiper class="news_ul" vertical circular autoplay>
+                <swiper-item class="news_li" wx:for="{{newsdata}}" wx:key='index'>
+                    <view>{{item}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <!-- 新闻下面 -->
+    <view class="kaixueji">
+        <image src="https://x.dscmall.cn/storage/data/gallery_album/original_img/CPvH5WHHbF0EoG9XjRQbbT3knMVCeEt9DlYGQhJM.png?imageView2/2/format/webp" style="width:100%;height:348rpx"></image>
+    </view>
+</view>

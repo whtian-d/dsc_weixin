@@ -1,0 +1,17 @@
+<view class="header">
+    <view class="userinfo_warp">
+        <view class="logo_box">
+            <image src="{{userInfoData.avatarUrl}}"></image>
+        </view>
+        <view class="userinfo_content">
+            <view class="user_name_warp">
+                <button wx:if="{{!falg}}" class="user_login" open-type="getUserInfo" bindgetuserinfo="loginFn">点击登录</button>
+                <view class="user_name" wx:else>{{userInfoData.nickName}}</view>
+                <view class="iconfont icon-home-xiaoxi"></view>
+                <view class="iconfont icon-personal-shezhi"></view>
+            </view>
+
+            <view class=""></view>
+        </view>
+    </view>
+</view>

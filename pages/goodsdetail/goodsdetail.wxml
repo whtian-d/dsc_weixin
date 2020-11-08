@@ -1,0 +1,180 @@
+<tabnav params="{{tabnav}}" />
+<!-- 引入wxparse -->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="goods_detail" style="top:{{otop}}rpx">
+    <scroll-view style="width:100%;height:100%" scroll-y="true" bindscrolltolower="scrollBottomFn"
+        scroll-into-view="{{scrollId}}" scroll-with-animation="true" bindscroll="scrollFn">
+        <view class="fixtop" style="top:{{otop}}rpx; background-color: rgba(255, 255, 255, 1);">
+            <view class="fixtop_item {{activeIndex==index?'active':''}}" wx:for="{{fixTopData}}" wx:key='index'
+                bindtap="bindFixTitle" data-index="{{index}}">{{item}}</view>
+        </view>
+        <view>
+            <view id="detail0">
+                <swiper class="swiper_warp" indicator-dots='true' indicator-color="#fff" indicator-active-color='#0ff'
+                    autoplay='true' interval="2000" circular>
+                    <swiper-item class="swiper_content" wx:for="{{GoodsData.gallery_list}}" wx:key='index'>
+                        <image src="{{item.img_url}}"></image>
+                    </swiper-item>
+                </swiper>
+                <view class="price">
+                    <view class="nowPrice">￥{{GoodsData.shop_price_original}}</view>
+                    <view class="oldPrice">￥{{GoodsData.marketPrice}}</view>
+                </view>
+                <view class="vip">
+                    <view class="vip_desc">
+                        <view class="logoimg">
+                            <image src="https://x.dscmall.cn/static/dist/img/icon-vip.png"></image>
+                        </view>
+                        <view class="text">高级VIP享超值优惠价</view>
+                        <view class="vipprice">￥{{GoodsData.membership_card_discount_price}}</view>
+                    </view>
+                    <view class="kaivip">
+                        <view class="text">立即开通</view>
+                        <view class="iconfont icon-more"></view>
+                    </view>
+                </view>
+                <view class="goods_name">
+                    {{GoodsData.goods_name}}
+                </view>
+                <view class="sales_volume">
+                    <view>累计销量 {{GoodsData.goods_rate}}</view>
+                    <view>库存{{GoodsData.goods_number}}</view>
+                    <view style="text-algin:right">上海市 上海市</view>
+                </view>
+                <view class="integral">
+                    <view class="headertitle">赠送积分：</view>
+                    <view class="rightvalue">46积分</view>
+                </view>
+                <view class="integral nomargin">
+                    <view class="headertitle">服务：</view>
+                    <view class="rightvalue">正品保证正品保证正品保证</view>
+                </view>
+                <view class="integral">
+                    <view class="headertitle">送至：</view>
+                    <view class="rightvalue">上海市 上海市 黄浦区</view>
+                    <view class="iconfont icon-jiantou2"></view>
+                </view>
+                <view class="integral nomargin">
+                    <view class="headertitle">运费：</view>
+                    <view class="rightvalue">￥0.00</view>
+                </view>
+                <view class="yixuan">
+                    <!-- <view class="integral">
+                <view class="headertitle">已选：</view>
+                <view class="rightvalue">1个</view>
+                <view class="iconfont icon-jiantou2"></view>
+            </view> -->
+                    <van-cell title="已选:" value="{{selectNum}}个" is-link bind:click="showPopup" round />
+                </view>
+                <view class="mask" wx:if="{{showMask}}" bindtap="clickMaskFn">
+                </view>
+                <view class="bottom_addcart_warp" wx:if="{{showMask}}" animation="{{bottomAnimationData}}">
+                    <view class="goods_content">
+                        <view class="goods_img_box">
+                            <image src="{{GoodsData.goods_img}}">
+                            </image>
+                        </view>
+                        <view class="goods_img_right">
+                            <view class="goods_r_title">{{GoodsData.goods_name}}</view>
+                            <view class="goods_r_price">{{GoodsData.shop_price_original}}</view>
+                            <view class="goods_r_kucun">库存：{{GoodsData.goods_number}}</view>
+                            <view class="closeicon" bindtap="clickMaskFn">
+                                <van-icon name="cross"  size="20px" />
+                            </view>
+                        </view>
+                    </view>
+                    <view class="changeNum_box">
+                        <view class="left_text">数量</view>
+                        <view class="right_box">
+                           <button bindtap="jianCartNumFn">-</button>
+                            <input type="text" value="{{selectNum}}"/> 
+                            <button bindtap="addCartNumFn">+</button>
+                        </view>
+                    </view>
+                    <view class="bottom_btn_group">
+                        <view>立即购买</view>
+                        <view bindtap="addSumCart">加入购物车</view>
+                    </view>
+                </view>
+                <!--  -->
+                <view class="integral">
+                    <view class="headertitle">门店自取</view>
+                    <view class="iconfont icon-jiantou2"></view>
+                </view>
+                <view class="integral">
+                    <view class="headertitle">网友讨论圈</view>
+                    <view class="iconfont icon-jiantou2"></view>
+                </view>
+            </view>
+            <!-- 商铺信息 -->
+            <view id="detail1">
+                <view class="shopinfo_warp" wx:if="{{GoodsData.ru_id!=0}}">
+                    <view class="shopinfo_box">
+                        <view class="shopinfo_logo_box">
+                            <image src="{{shopData.logo_thumb}}" />
+                        </view>
+                        <view class="shopinfo_name_content">
+                            <view class="shopname">{{shopData.shop_name}}</view>
+                            <view class="shopfollow_num">已经有 {{shopData.count_gaze}} 人关注</view>
+                        </view>
+                        <view class="follow_content">
+                            <view>未关注</view>
+                        </view>
+                    </view>
+                    <view class="shopfraction">
+                        <view>
+                            <text>商品 </text>
+                            <text class="orange">{{shopData.commentdelivery}} </text>
+                            <text class="dengji">{{shopData.commentdelivery_font}}</text>
+                        </view>
+                        <view>
+                            <text>服务 </text>
+                            <text class="green">{{shopData.commentrank}} </text>
+                            <text class="dengji greenbg">{{shopData.commentrank_font}}</text>
+                        </view>
+                        <view>
+                            <text>时效 </text>
+                            <text class="purple">{{shopData.commentserver}} </text>
+                            <text class="dengji purplebg">{{shopData.commentserver_font}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 商铺下面信息 -->
+                <view class="goods_detail_warp">
+                    <view class="title">
+                        <view class="goods_detail_box active">
+                            <text>商品详情</text>
+                        </view>
+                        <view class="goods_detail_box">
+                            <text>规格参数</text>
+                        </view>
+                    </view>
+                    <view class="guize">
+                        <template is="wxParse" data="{{wxParseData:courseDetail.nodes}}" />
+                    </view>
+                </view>
+            </view>
+            <view id="detail2">
+                <view class="cailike">
+                    <view class="title">猜你喜欢</view>
+                    <view>
+                        <scrollgoods params="{{goodslistData}}" />
+                    </view>
+                </view>
+            </view>
+            <view style="width:100%;height:300rpx;"></view>
+            <!-- 底部购物栏 -->
+            <view class="goods_detail_bottom">
+                <van-goods-action>
+                    <van-goods-action-icon icon="chat-o" text="客服" dot />
+                    <van-goods-action-icon icon="like-o" text="收藏" />
+                    <van-goods-action-icon icon="cart-o" text="购物车" info="{{cartNum}}" bind:click="onClickIcon" />
+                    <view class="addAnimation" animation="{{animationData}}">+1</view>
+                    <van-goods-action-button text="加入购物车" color="#be99ff" type="warning" bind:click="addcart" />
+                    <van-goods-action-button color="#7232dd" text="立即购买" />
+                </van-goods-action>
+            </view>
+
+        </view>
+    </scroll-view>
+</view>

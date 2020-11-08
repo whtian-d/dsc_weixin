@@ -1,0 +1,74 @@
+/* components/homechildother/homechildother.wxss */
+.goods_category_box{
+    border-radius: 20rpx;
+    padding: 20rpx;
+    width: 95%;
+    margin:20rpx auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.goods_category_box .goods_category{
+    width: 20%;
+    height: 180rpx;
+    margin-bottom: 20rpx;
+}
+.goods_category_box .goods_category .imgbox{
+    width: 100%;
+    height: 150rpx;
+}
+.goods_category_box .goods_category .imgbox image{
+    width: 100%;
+    height: 100%;
+}
+.goods_category_box .goods_category .text{
+    text-align: center;
+    font-size: 24rpx;
+}
+/* 品牌精选 */
+.Brand_selection{
+    width: 95%;
+    margin:0 auto 20rpx;
+    border-radius: 20rpx;
+}
+.Brand_selection_title{
+    width: 100%;
+    height: 100rpx;
+    box-sizing: border-box;
+    padding: 40rpx 40rpx 20rpx;
+    font-size: 30rpx;
+    background-color: #fff;
+    border-radius: 20rpx 20rpx 0 0;
+}
+/* 品牌精选内容 */
+.brand_warp{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 20rpx 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.brand_warp .brand_item{
+    width: 25%;
+    /* height: 142rpx; */
+    margin-bottom: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.brand_warp .brand_item .img_box{
+    width: 100%;
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand_warp .brand_item .img_box image{
+    width: 100%;
+    height: 62rpx;
+}
+.brand_warp .brand_item text{
+    font-size: 24rpx;
+}

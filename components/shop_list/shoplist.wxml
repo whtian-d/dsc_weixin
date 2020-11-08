@@ -1,0 +1,20 @@
+<view class="shop_scrolllist">
+    <scroll-view class="scroll" scroll-x="true">
+        <view class="ul" style="width:{{(params.owidth+20)*params.data.length}}rpx">
+            <view class="li" style="width:{{params.owidth}}rpx" wx:for="{{params.data}}" wx:key='index'>
+                <view class="imgbox_content">
+                    <view class="imgbox_warp">
+                        <image src="{{item.street_thumb}}"></image>
+                    </view>
+                    <view class="shop_logo">
+                        <image src="{{item.logo_thumb}}"></image>
+                    </view>
+                </view>
+                <view class="desc">
+                    <view class="name">{{item.rz_shopName}}</view>
+                    <view class="shopNum">共计<text>{{item.total}}</text>件商品</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

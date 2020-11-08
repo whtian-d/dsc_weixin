@@ -1,0 +1,36 @@
+<view class="scroll_wrap">
+    <!-- scroll_items  scroll_items_category -->
+    <view class="{{params.categorygoods==true?'scroll_items_category':'scroll_items'}} " wx:for="{{params.datalist}}" wx:key='index'>
+        <view  data-goodid="{{item.goods_id}}">
+            <view class="scrollgoods_img">
+                <image wx:if="{{imgtoVideo}}" bindtap="navgetorFn" src="{{item.goods_thumb||item.img}}"></image>
+                <video src="{{item.goods_video}}" controls="false" poster="{{item.goods_thumb}}" wx:else></video>
+            </view>
+            <view class="desc">
+                <view class="scrollgoods_title" wx:if="{{params.showTitle}}">
+                    {{item.goods_name||item.title}}
+                </view>
+                <view class="scrollgoods_price" wx:if="{{params.showPrice}}">￥{{item.shop_price}}</view>
+                <view class="scrollgoods_outer" wx:if="{{params.showOuter}}">
+                    <text class="goshop">进店</text>
+                    <view class="shopNum">{{item.sale}}人购买过</view>
+                    <view class="iconfont icon-cart"></view>
+                </view>
+                <view class="pingjia" wx:if="{{params.showAuthor}}">
+                    <view class="author">
+                        <view class="logo">
+                            <image src="{{item.user_picture||item.logo_thumb}}"></image>
+                        </view>
+                        <view class="name">
+                            {{item.user_name||item.shop_name}}
+                        </view>
+                    </view>
+                    <view class="watchNum">
+                        <view class="iconfont icon-find-liulan-alt "></view>
+                        <view class="num">{{item.dis_browse_num||item.look_num}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

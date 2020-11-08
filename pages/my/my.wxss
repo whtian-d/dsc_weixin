@@ -1,0 +1,64 @@
+/* pages/my/my.wxss */
+@import "../../fonts/dsc_small_font.wxss";
+.header {
+    width: 100%;
+    height: 376rpx;
+    background: linear-gradient(-88deg, #ff4c30, #ea0a21);
+}
+
+.header .userinfo_warp {
+    width: 100%;
+    height: 208rpx;
+    box-sizing: border-box;
+    padding: 34rpx;
+    display: flex;
+}
+
+.header .userinfo_warp .logo_box {
+    width: 140rpx;
+    height: 140rpx;
+}
+
+.header .userinfo_warp .logo_box image {
+    width: 100%;
+    height: 100%;
+    border-radius: 70rpx;
+}
+
+.header .userinfo_warp .userinfo_content {
+    flex: 1;
+    margin-left: 24rpx;
+    overflow: hidden;
+}
+
+.user_name_warp {
+    display: flex;
+    height: 40rpx;
+    margin-top: 12rpx;
+    justify-content: flex-start;
+}
+
+.userinfo_content .user_login {
+    height: 40rpx;
+    display: flex;
+    font-size: 32rpx;
+    display: inline-block;
+    margin: 0;
+    line-height: 40rpx;
+    background-color: transparent;
+    border: none;
+    flex: 1;
+}
+.userinfo_content .user_name{
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: 600;
+    flex: 1;
+}
+.userinfo_warp .iconfont{
+    font-size: 36rpx;
+    color: #fff;
+}
+.userinfo_warp .iconfont:nth-child(2){
+    margin-right: 30rpx;
+}

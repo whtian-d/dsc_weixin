@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "scrollgoods":"../../components/scroll_goods/scroll_goods"
+  }
+}
